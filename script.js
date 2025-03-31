@@ -81,7 +81,7 @@ var typingEffect = new Typed(".typedText", {
   backDelay: 2000,
 });
 
-/* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
+/* ----- SCROLL REVEAL ANIMATIONS ----- */
 const sr = ScrollReveal({
   origin: "top",
   distance: "80px",
@@ -89,7 +89,7 @@ const sr = ScrollReveal({
   reset: true,
 });
 
-/* -- HOME -- */
+/* -- Home -- */
 sr.reveal(".featured-text-card", {});
 sr.reveal(".featured-name", { delay: 100 });
 sr.reveal(".featured-text-info", { delay: 200 });
@@ -97,15 +97,13 @@ sr.reveal(".featured-text-btn", { delay: 200 });
 sr.reveal(".social_icons", { delay: 200 });
 sr.reveal(".featured-image", { delay: 300 });
 
-/* -- PROJECT BOX -- */
+/* -- Project Box -- */
 sr.reveal(".project-box", { interval: 200 });
 
-/* -- HEADINGS -- */
+/* -- Headings -- */
 sr.reveal(".top-header", {});
 
-/* ----- ## -- SCROLL REVEAL LEFT_RIGHT ANIMATION -- ## ----- */
-
-/* -- ABOUT INFO & CONTACT INFO -- */
+/* -- About Info & Contact Info -- */
 const srLeft = ScrollReveal({
   origin: "left",
   distance: "80px",
@@ -116,7 +114,7 @@ const srLeft = ScrollReveal({
 srLeft.reveal(".about-info", { delay: 100 });
 srLeft.reveal(".contact-info", { delay: 100 });
 
-/* -- ABOUT SKILLS & FORM BOX -- */
+/* -- About Skills & Form Box -- */
 const srRight = ScrollReveal({
   origin: "right",
   distance: "80px",
