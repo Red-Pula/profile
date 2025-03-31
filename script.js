@@ -28,6 +28,50 @@ function headerShadow() {
   }
 }
 
+/* ----- CHANGE ACTIVE LINK ----- */
+
+const sections = document.querySelectorAll("section[id]");
+
+function scrollActive() {
+  const scrollY = window.scrollY;
+
+  sections.forEach((current) => {
+    const sectionHeight = current.offsetHeight,
+      sectionTop = current.offsetTop - 50,
+      sectionId = current.getAttribute("id");
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document
+        .querySelector(".nav-menu a[href*=" + sectionId + "]")
+        .classList.add("active-link");
+    } else {
+      document
+        .querySelector(".nav-menu a[href*=" + sectionId + "]")
+        .classList.remove("active-link");
+    }
+  });
+}
+
+/* ----- GO TO CONTACT ----- */
+
+window.addEventListener("scroll", scrollActive);
+
+function goToContact() {
+  window.location = "#contact";
+}
+
+/* ----- DOWNLOAD CV ----- */
+
+document.getElementById("downloadBtn").addEventListener("click", function () {
+  const link = document.createElement("a");
+  link.href = "cv.pdf";
+  link.setAttribute("download", "cv.pdf");
+
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
+
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText", {
   strings: ["Developer", "Programmer", "Trader", "Designer", "Trainer"],
@@ -82,44 +126,3 @@ const srRight = ScrollReveal({
 
 srRight.reveal(".skills-box", { delay: 100 });
 srRight.reveal(".form-control", { delay: 100 });
-
-/* ----- CHANGE ACTIVE LINK ----- */
-
-const sections = document.querySelectorAll("section[id]");
-
-function scrollActive() {
-  const scrollY = window.scrollY;
-
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 50,
-      sectionId = current.getAttribute("id");
-
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector(".nav-menu a[href*=" + sectionId + "]")
-        .classList.add("active-link");
-    } else {
-      document
-        .querySelector(".nav-menu a[href*=" + sectionId + "]")
-        .classList.remove("active-link");
-    }
-  });
-}
-
-window.addEventListener("scroll", scrollActive);
-
-function goToContact() {
-  window.location = "#contact";
-}
-
-document.getElementById("downloadBtn").addEventListener("click", function () {
-  const link = document.createElement("a");
-  link.href = "cv.pdf";
-  link.setAttribute("download", "cv.pdf");
-
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-});
-
