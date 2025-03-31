@@ -114,9 +114,12 @@ function goToContact() {
 }
 
 document.getElementById("downloadBtn").addEventListener("click", function () {
-  const pdfUrl = "cv.pdf";
   const link = document.createElement("a");
-  link.href = pdfUrl;
-  link.download = "cv.pdf";
+  link.href = "cv.pdf";
+  link.setAttribute("download", "cv.pdf");
+
+  document.body.appendChild(link);
   link.click();
+  document.body.removeChild(link);
 });
+
