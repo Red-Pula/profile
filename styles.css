@@ -387,6 +387,7 @@ h3 {
   border-radius: 20px;
   box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
   overflow: hidden;
+  cursor: pointer;
 }
 .project-box > i {
   font-size: 50px;
@@ -398,6 +399,7 @@ h3 {
   text-align: center;
   padding: 1em;
   color: #777;
+  cursor: pointer;
 }
 .project-box::after,
 .contact-info::after {
